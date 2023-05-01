@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Brain Stroke Prediction </title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../static/img/favicon1.ico" rel="icon">
+  <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <style>
+  	body {background-image: url('https://www.shutterstock.com/image-illustration/light-blue-gradient-background-radial-260nw-1484214203.jpg');    background-repeat: no-repeat; background-attachment: fixed; background-size:cover;}
+  </style>
+
+  <style>
+	body {
+		background-color: #020634;
+	  }
+	.prediction-text {
+        color: rgb(255, 255, 255);
+    }
+	.button_cont {
+    margin-top: 20px; /* adjust the value to your desired amount */
+    }
+	
+
+
+  </style>
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body text="white">
+	
+	
+	<div class="login">
+		<!--Get input for prediction-->
+		<center>
+			<form action="{{ url_for('predict')}}"method="post">
+				<h1>BRAIN STROKE PREDICTION  </h1><h2>       ENTER FIELDS</h2>
+                
+				<input type="text" name="age" placeholder="age" required="required" /><br>
+				<input type="text" name="avg_glucose_level" placeholder="avg_glucose_level" required="required" /><br>
+				<input type="text" name="bmi" placeholder="bmi" required="required" /><br>
+				
+				<label for="hypertension">Hypertension</label><select name="Hypertension" id="Hypertension">
+					<option value=1>Present</option>
+					<option value=0>Absent</option>
+					
+				  </select><br>
+				<label for="heart_disease">Heart disease</label><select name="heart_disease" id="heart_disease">
+					<option value=1>Present</option>
+					<option value=0>Absent</option>
+					
+				  </select><br>
+				
+				<label for="ever_married">Married</label><select name="ever_married" id="ever_married">
+					<option value=1>Yes</option>
+					<option value=0>No</option>
+					
+				  </select><br>
+				  
+				<label for="work_type">Work Type</label><select name="work_type" id="work_type">
+					<option value=0>Govt job</option>
+					<option value=1>Never worked</option>
+					<option value=2>Private</option>
+					<option value=3>Self employed</option>
+					<option value=4>Children</option>
+					
+				  </select><br>
+				
+				<label for="smoking_status">Smoking Status</label><select name="smoking_status" id="smoking_status">
+					<option value=0>Formerly smoked</option>
+					<option value=1>Never smoked</option>
+					<option value=2>Smokes</option>
+					
+				  </select><br>
+				
+			
+				
+				
+				<!-- show button-->
+				<div class="button_cont" align="center"><a class="button_css">
+					<button text="blue" type="submit" class="btn btn-primary btn-block btn-large"><strong><h4>CLICK HERE TO PREDICT </h4></strong>
+						<h4 style="color:Tomato;">Stroke can occur(1)</h4>
+						<h4 style="color:DodgerBlue;">Stroke won't occur(0)</h4>
+					</button></a>
+				</div>
+			</form>
+		</center> <!--Show predicted output using ML model-->
+		<div>
+			<center>
+				<h1 class="prediction-text" style="margin-top: 50px;">{{ prediction }}</h1>
+
+				
+				
+				
+				
+				
+			
+
+
+                   
+
+			
+		</ul>
+		
+		</center>
+	</div >
+
+	</body>
+	</html>
